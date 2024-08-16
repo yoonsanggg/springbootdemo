@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- thymeleaf 문법
+    서버에서 전달받은 데이터를 화면에 출력하는 문법
+      -->
+    <!-- ph텍스트는 테그의 안에다가 코드를 작성해 -->
+    <!-- ${변수} -->
+    <P th:text ="${date}">현재시간</P>
+    <!-- 가로줄 출력 -->
+    <hr>
+    <p th:text ="${name}">이름</p>
+
+     <!-- model로 저장하고 매개변수를 지정한값을 출력하려면${}로 하면됨 -->
+    <p th:text="${name}+'님 환영합니다.'">이름</p>
+    <a href="/bookDetail" th:text="이무진2"></a>
+    <!-- 앞에놈이 시작 /이게 있는놈이 끝 -->
+    <p></p>
+
+    <!-- 줄바꿈 -->
+    <br> 
+
+</body>
+</html>

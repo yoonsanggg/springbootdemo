@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.example.demo6.mapper.MemberMapper">
+
+
+  <select id="selectMember" resultType="com.example.demo6.dto.MemberDto">
+    <!-- 매개변수로 받아서 넣어줄거야 -->
+    select m_no, id, pw, name, to_char(regdate,'yyyy-mm-dd')
+    from tb_member 
+    where m_no=#{m_no}
+
+  </select>
+
+
+</mapper>

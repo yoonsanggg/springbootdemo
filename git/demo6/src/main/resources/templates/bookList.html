@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>도서목록</h1>
+    <!-- ${list} list로부터 저장된 값을 : 하나씩 꺼내서 book에 저장 -->
+    <th:block th:each="book, status:${list}">
+        <a href="http://naver.com">네이버</a>
+        <!-- url(링크)은 @안에 적고 /book은 book으로 갈거야
+                                        book 호출하는거임
+                                        호출하고 b_no를 가져오고  -->
+        <a th:href="@{/book(b_no=${book.b_no})}">상세페이지</a> 
+        <span th:text="${book.b_no}">도서번호</span>
+        <span th:text="${book.title}">도서명</span>
+        <span th:text="${book.author}">작가명</span>
+        <br>
+</th:block> 
+</body>
+</html>

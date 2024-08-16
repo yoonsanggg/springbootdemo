@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>사용자 상세</h2>
+    
+    <p th:text="${msg}"></p>
+    <th th:text="${member.m_no}">회원번호</th>
+    <th th:text="${member.name}">이름</th>
+    <th th:text="${member.id}">아이디</th>
+    <th th:text="${member.regdate}">가입일</th>
+
+
+    <button>수정</button> <button>삭제</button>
+
+</body>
+</html>

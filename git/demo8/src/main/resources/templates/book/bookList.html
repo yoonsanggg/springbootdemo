@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영등포 도서관</title>
+</head>
+<body>
+    <h2 th:text = "${title}">도서목록</h2>
+    <h2>도서 상세페이지</h2>
+    <!-- 링크의 기본 스타일 : 파란글씨, 밑줄 -->
+    <a href="/book/bookDetail?b_no=B00001">상세페이지로 이동</a>
+    <br>
+    <!-- 서버에서 전달받은 데이터를 이용해서 요청
+    도서제목을 클릭하면 도서 상세 페이지로 이동
+     이동시 도서번호를 파라메터로 전달! -->
+
+    <a th:href="@{/book/bookDetail(bno=${title})}">
+        상세페이지로 이동
+    </a>
+
+    <hr>
+    <!-- 제어문 -->
+    <!-- 조건이 참이면 블럭 안 코드 실행 -->
+    <th:block th:if="${list != null}">
+    list is not null
+    <br>
+    <!-- <p th:text="${list}"></p> -->
+    <table>
+        <tr>
+            <th>도서명</th>
+            <th>작가</th>
+        </tr>
+        
+        <th:block th:each="book:${list}">
+            <tr>
+
+                <td th:text="${book.title}">제목</td>
+                <td th:text="${book.author}">작가</td>
+                <td>
+                <a th:href="@{/book/bookDetail(b_no=${book.b_no})}" 
+                th:text="${book.title}"></a>
+                </td>
+
+            </tr>
+            
+        </th:block>
+    </table>
+
+        <!-- 조건이 거짓이면 블럭 안 코드 실행 -->
+    <th:block th:unless="${list != null}">
+    list is null
+
+    </th:block>
+
+
+
+    <hr>
+
+    
+
+</body>
+</html>

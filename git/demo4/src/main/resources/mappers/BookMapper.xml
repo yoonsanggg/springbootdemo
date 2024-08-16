@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 여긴 메퍼 경로 -->
+<mapper namespace="com.example.demo4.mapper.BookMapper">
+<!-- id:  메서드 이름 
+    resultType :반환타입-->
+      <!-- <select id="selectTime" resultType="String">
+    select sysdate from dual
+  </select> -->
+
+  <select id="selectTimeXml" resultType="String">
+    select sysdate from dual
+  </select>
+
+</mapper>

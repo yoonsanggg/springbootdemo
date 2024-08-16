@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>도서정보</h1>
+    <p th:text="${book.title}">제목</p>
+    <p th:text="${book.b_no}">책번호</p>
+    <p th:text="${book.author}">작가</p>
+    <p th:text="${book.price}">가격</p>
+    <a href="/bookList">목록으로 이동</a>
+    <h3 th:text="${msg}">예외처리/h3>
+</body>
+</html>

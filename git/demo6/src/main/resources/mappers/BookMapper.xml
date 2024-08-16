@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.demo6.mapper.BookMapper">
+    <select id="selectDateXml" resultType="String">
+    select sysdate from dual
+    </select>
+
+ 
+    <select id="selectBook" resultType="com.example.demo6.dto.BookDTO">
+    select * from tb_book where b_no= #{b_no}
+    </select>
+    
+    <insert id="insertBook">
+      insert into tb_book (b_no, title, author)
+      values('B'||lpad(seq_tb_book.nextval,5,0), #{title},#{author})
+    </insert>
+    <!-- #{}안에 값은 dto가 갖고있는 값중에 선정하고 -->
+
+    <select id="selectBookList" resultType="com.example.demo6.dto.BookDTO">
+      select *
+      from  tb_book
+      order by b_no desc
+    </select>
+
+</mapper>
+
+
+<!-- 저 위 부분이 작성 정의
+
+메퍼는 namespace가 있다 얜 바라보는 인터페이스 주소 넣어줌-->
+
+<!-- id 속성 부여 이유 메서드불러오기위해
+    resultType 불러오는 메서드의 속성
+    만약 insert, delete,update 가 있다면 int?
+    -->
